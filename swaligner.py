@@ -7,7 +7,7 @@ match    = 3
 mismatch = -3
 gap      = -2
 
-#sequences
+#sequences. seq2 should always be larger than seq1
 seq1 = 'TGTTACGG'
 seq2 = 'GGTTGACTA'
 
