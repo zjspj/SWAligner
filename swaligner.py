@@ -58,10 +58,6 @@ def print_matrix(matrix):
     0   1   4   4   7   6
     '''
     print(np.matrix(matrix).T)
-    #for row in matrix:
-    #    for col in row:
-    #        print('{0:>4}'.format(col))
-    #    print()
 
 #add your function(s) to find a solution here.
 
