@@ -61,9 +61,33 @@ def print_matrix(matrix):
 
 #add your function(s) to find a solution here.
 
+def path_str(matrix, start_pos):
+    print(start_pos)
+    path_str = ""
+    pos = start_pos
+    while matrix[pos[0]][pos[1]] != 0:
+        path_str += str(pos)
+        path_str += ">"
+        pos = path_find(matrix, pos)
+    path_str += str(pos)
+    return path_str
+
+def path_find(matrix, position):
+    left = (position[0]-1, position[1])
+    up = (position[0], position[1]-1)
+    diag = (position[0]-1, position[1]-1)
+    largest = max(matrix[left[0]][left[1]], matrix[up[0]][up[1]], matrix[diag[0]][diag[1]])
+    if matrix[left[0]][left[1]] == largest:
+        return left
+    elif matrix[up[0]][up[1]] == largest:
+        return up
+    elif matrix[diag[0]][diag[1]] == largest:
+        return diag
+
 #end of your function(s)
 
 if __name__ == '__main__':
     #my main
     score_matrix, start_pos = create_score_matrix(rows, cols)
+    print(path_str(score_matrix, start_pos))
     print_matrix(score_matrix)
